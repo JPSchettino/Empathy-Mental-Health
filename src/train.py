@@ -74,7 +74,7 @@ Load input dataset
 '''
 if args.train_path:
 	df = pd.read_csv(args.train_path, delimiter=',')
-	df['rationale_labels'] = df['rationales'].apply(lambda s: torch.tensor(np.asarray([int(i) for i in s.split(',')]), dtype=torch.long))
+	df['rationale_labels'] = df['rationale_labels'].apply(lambda s: torch.tensor(np.asarray([int(i) for i in s.split(',')]), dtype=torch.long))
 else:
 	print('No input training data specified.')
 	print('Exiting...')
@@ -83,7 +83,7 @@ else:
 if args.do_test:
 	if args.test_path:
 		df_test = pd.read_csv(args.test_path, delimiter=',')
-		df_test['rationale_labels'] = df_test['rationales'].apply(lambda s: torch.tensor(np.asarray([int(i) for i in s.split(',')]), dtype=torch.long))
+		df_test['rationale_labels'] = df_test['rationale_labels'].apply(lambda s: torch.tensor(np.asarray([int(i) for i in s.split(',')]), dtype=torch.long))
 	else:
 		print('No input test data specified.')
 		print('Exiting...')
@@ -92,7 +92,7 @@ if args.do_test:
 if args.do_validation:
 	if args.dev_path:
 		df_val = pd.read_csv(args.dev_path, delimiter=',')
-		df_val['rationale_labels'] = df_val['rationales'].apply(lambda s: torch.tensor(np.asarray([int(i) for i in s.split(',')]), dtype=torch.long))
+		df_val['rationale_labels'] = df_val['rationale_labels'].apply(lambda s: torch.tensor(np.asarray([int(i) for i in s.split(',')]), dtype=torch.long))
 	else:
 		print('No input validation data specified.')
 		print('Exiting...')
